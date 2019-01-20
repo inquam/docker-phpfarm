@@ -22,6 +22,9 @@ ln -sf /dev/stdout $APACHE_LOG_DIR/other_vhosts_access.log
 # Apache gets grumpy about PID files pre-existing
 rm -f /var/run/apache2/apache2.pid
 
+echo "Starting SSL Proxy"
+local-ssl-proxy --config /etc/sslProxyConfig.json &
+
 # Start Apache in the foreground - Docker needs this to keep the container
 # running.
 apache2ctl -DFOREGROUND
