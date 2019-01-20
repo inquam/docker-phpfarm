@@ -120,12 +120,16 @@ RUN apt-get update && \
   apt-get autoremove -y && \
   rm -rf /var/lib/apt/lists/*
 
+# Local SSL Proxy
+COPY    sslProxyConfig.json /etc/sslProxyConfig.json
+RUN     curl -sL https://deb.nodesource.com/setup_7.x | bash - && \
+        apt-get install nodejs && \
+        npm install -g local-ssl-proxy
 
 # expose the ports
-EXPOSE 8000 8053 8054 8055 8056 8070 8071 8072 8073
+EXPOSE 8000 8053 8054 8055 8056 8070 8071 8072 8073 8100 8153 8154 8155 8156 8170 8171 8172 8173
 
 # run it
 WORKDIR /var/www
 COPY run.sh /run.sh
 CMD ["/bin/bash", "/run.sh"]
-
