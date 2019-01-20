@@ -6,25 +6,29 @@ This is a build file to create a [phpfarm](https://github.com/fpoirotte/phpfarm)
 [![CircleCI](https://circleci.com/gh/splitbrain/docker-phpfarm.svg?style=shield)](https://circleci.com/gh/splitbrain/docker-phpfarm)
 
 
-Port | PHP Version | Binary
------|-------------|-----------------------
-8051 | 5.1.6       | php-5.1 (wheezy only)
-8052 | 5.2.17      | php-5.2 (wheezy only)
-8053 | 5.3.29      | php-5.3
-8054 | 5.4.45      | php-5.4
-8055 | 5.5.38      | php-5.5
-8056 | 5.6.39      | php-5.6
-8070 | 7.0.33      | php-7.0
-8071 | 7.1.25      | php-7.1
-8072 | 7.2.13      | php-7.2
-8073 | 7.3.0       | php-7.3 (jessie only)
-8000 | nightly     | php-x.x (jessie only)
+Port | SSL Port | PHP Version | Binary
+-----|----------|-------------|-----------------------
+8051 |          | 5.1.6       | php-5.1 (wheezy only)
+8052 |          | 5.2.17      | php-5.2 (wheezy only)
+8053 | 8153     | 5.3.29      | php-5.3
+8054 | 8154     | 5.4.45      | php-5.4
+8055 | 8155     | 5.5.38      | php-5.5
+8056 | 8156     | 5.6.39      | php-5.6
+8070 | 8170     | 7.0.33      | php-7.0
+8071 | 8171     | 7.1.25      | php-7.1
+8072 | 8172     | 7.2.13      | php-7.2
+8073 | 8173     | 7.3.0       | php-7.3 (jessie only)
+8000 | 8100     | nightly     | php-x.x (jessie only)
 
 There are two tags for this image: ``wheezy`` and ``jessie``, referring to the underlying Debian base system releases. Unless you need PHP 5.1 or 5.2 you should always use the ``jessie`` tag.
 
 The ``wheezy`` image is deprecated and may not run on modern Linux kernels anymore! Booting your host system with `vsyscall=emulate` kernel parameter may help if you really need it.
 
 The `nightly` build refers to the current `master` when the image was built. You probably want to rebuild the image yourself if you need to test against a very recent snapshot. See next section on how to do that.
+
+SSL Proxy
+---------
+To access the different versions over https a proxy is running. This is only enabled for the jessie build of the image.
 
 Building the image
 ------------------
