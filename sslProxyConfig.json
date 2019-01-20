@@ -1,0 +1,38 @@
+{
+  "php 5.3": {
+    "source": 8153,
+    "target": 8053
+  },
+  "php 5.4": {
+    "source": 8154,
+    "target": 8054
+  },
+  "php 5.5": {
+    "source": 8155,
+    "target": 8055
+  },
+  "php 5.6": {
+    "source": 8156,
+    "target": 8056
+  },
+  "php 7.0": {
+    "source": 8170,
+    "target": 8070
+  },
+  "php 7.1": {
+    "source": 8171,
+    "target": 8071
+  },
+  "php 7.2": {
+    "source": 8172,
+    "target": 8072
+  },
+  "php 7.3": {
+    "source": 8173,
+    "target": 8073
+  },
+  "php nightly": {
+    "source": 8100,
+    "target": 8000
+  }
+}
